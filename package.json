@@ -1,0 +1,22 @@
+{
+  "name": "burger-sqlize",
+  "version": "1.0.0",
+  "description": "The sequel to the restaurant ORM application, we now rebuild the application with some more heft and use Sequelize as our ORM.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mavstronaut/burger-sqlize.git"
+  },
+  "author": "mavstronaut",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mavstronaut/burger-sqlize/issues"
+  },
+  "homepage": "https://github.com/mavstronaut/burger-sqlize#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
