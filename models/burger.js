@@ -1,4 +1,5 @@
 var Sequelize = require("sequelize");
+var models = require('../config/connection.js');
 
 var burger = seqModel.define("BurgerTable", {
     id: {
