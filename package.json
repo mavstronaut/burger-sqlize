@@ -1,22 +1,28 @@
 {
-  "name": "burger-sqlize",
+  "name": "fat-burger",
   "version": "1.0.0",
-  "description": "The sequel to the restaurant ORM application, we now rebuild the application with some more heft and use Sequelize as our ORM.",
+  "description": "Eat-da-Burger",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mavstronaut/burger-sqlize.git"
+    "url": "git+https://github.com/mavstronaut/Fat-Burger.git"
   },
   "author": "mavstronaut",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mavstronaut/burger-sqlize/issues"
+    "url": "https://github.com/mavstronaut/Fat-Burger/issues"
   },
-  "homepage": "https://github.com/mavstronaut/burger-sqlize#readme",
+  "homepage": "https://github.com/mavstronaut/Fat-Burger#readme",
   "dependencies": {
-    "express": "^4.17.1"
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^3.1.0",
+    "method-override": "^3.0.0",
+    "mysql": "^2.17.1"
   }
 }
