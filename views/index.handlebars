@@ -36,15 +36,15 @@
 
             <div class="col s4">
                 {{#each burgers}}
-                {{#if this.devoured}}
-                    <div class='burgerEaten'>
-                    <div>
-                        {{this.name}} (eaten by {{this.Customer.name}})
-                    </div>
-                    </div>
-                {{/if}}
+                    {{#if this.devoured}}
+                        <div class='burgerEaten'>
+                            <div>
+                                {{this.name}} (eaten by {{this.Customer.name}})
+                            </div>
+                        </div>
+                    {{/if}}
                 {{/each}}
-            </div> <!-- End col s4 -->
+            </div> 
         </div>
     </div>
 </main>
