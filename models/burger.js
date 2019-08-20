@@ -1,25 +1,30 @@
-var Sequelize = require("sequelize");
-
-var burger = seqModel.define("burgers", {
-    id: {
-      type: Sequelize.INTEGER,
-      autoIncrement: true,
-      primaryKey: true
-    },
-    
-    burger_name: {
-      type: Sequelize.STRING,
-    },
-    devoured: {
-      type: Sequelize.BOOLEAN,
-      defaultValue : 0
-    },
-    date: {
-      type: Sequelize.DATE,
-    },
-    
-  });
+module.exports = function(sequelize, DataTypes) {
+    // Define the Burger Sequelize model
+    var Burger = sequelize.define("Burger", 
+      {
+        // The name identifying the burger
+        name: {
+          type: DataTypes.STRING,
+          allowNull: false
+        },
+        // The availability boolean
+        devoured: {
+          type: DataTypes.BOOLEAN,
+          defaultValue: false
+        }
+      }, {
+        classMethods: {
+          associate: function(models) {
+            // Burger is associated with one customer
+            Burger.belongsTo(models.Customer, {
+              onDelete: "CASCADE",
+              foreignKey: {
+                allowNull: true
+              }
+            });
+          }
+        }
+      });
   
-  burger.sync();
-
-module.exports = burger;
+    return Burger;
+  };
