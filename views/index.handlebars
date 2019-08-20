@@ -17,11 +17,16 @@
             <div class="col s6">
                 {{#each burgers}}
                     {{#unless this.devoured}}
-                        <div>
+                        <div class="burgerName">
+                            <div class='burgerAvailable'>{{this.name}}</div>
+                        </div>
+
+                        <div class="customerEats">
                             <form action="/burgers/{{this.id}}?_method=PUT" method="POST">
-                                <button type="submit" class="burgerAvailable"> {{this.burger_name}}</button>
+                            <input type="text" id="customerName" name="customerName" placeholder="Your Name">
+                            <button type="submit" class="eatBurgerButton fa fa-cutlery fa-2x" aria-hidden="true"></button>
                             </form>
-                        </div>          
+                        </div>     
                     {{/unless}}
                 {{/each}}
             </div> 
@@ -29,9 +34,9 @@
             <div class="col s6">
                 {{#each burgers}}
                     {{#if this.devoured}}
-                        <div class="burgerEaten">
+                        <div class='burgerEaten'>
                             <div>
-                                {{this.burger_name}}
+                                {{this.name}} (eaten by {{this.Customer.name}})
                             </div>
                         </div>
                     {{/if}}
