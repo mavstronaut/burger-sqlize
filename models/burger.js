@@ -12,19 +12,12 @@ module.exports = function(sequelize, DataTypes) {
           type: DataTypes.BOOLEAN,
           defaultValue: false
         }
-      }, {
-        classMethods: {
-          associate: function(models) {
-            // Burger is associated with one customer
-            Burger.belongsTo(models.Customer, {
-              onDelete: "CASCADE",
-              foreignKey: {
-                allowNull: true
-              }
-            });
-          }
-        }
+        
       });
+
+      Burger.associate = function (models) {
+        Burger.belongsTo(models.Customer);
+     }
   
     return Burger;
   };

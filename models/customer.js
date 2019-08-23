@@ -7,14 +7,11 @@ module.exports = function(sequelize, DataTypes) {
           type: DataTypes.STRING,
           allowNull: false
         }
-      }, {
-        classMethods: {
-          // Customer may consume many burgers
-          associate: function(models) {
-            Customer.hasMany(models.Burger)
-          }
-        }
       });
   
+      Customer.associate = function (models) {
+        Customer.hasMany(models.Burger);
+    }
+
     return Customer;
   };
