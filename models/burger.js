@@ -16,8 +16,8 @@ module.exports = function(sequelize, DataTypes) {
       });
 
       Burger.associate = function (models) {
-        Burger.belongsTo(models.Customer);
-     }
+        Burger.hasMany(models.Customer);
+     };
   
     return Burger;
   };

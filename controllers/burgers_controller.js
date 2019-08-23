@@ -8,7 +8,7 @@ module.exports = function(app) {
 
     db.Burger.findAll({
       include: [ db.Customer ],
-      order: "name ASC"
+      order: [ db.Burger ]
     })
     .then(function(data) {
       log.debug("data = " + JSON.stringify(data));

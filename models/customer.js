@@ -10,8 +10,17 @@ module.exports = function(sequelize, DataTypes) {
       });
   
       Customer.associate = function (models) {
-        Customer.hasMany(models.Burger);
-    }
+        Customer.belongsTo(models.Burger);
+    };
+
+    /*
+    Customer.associate = function (models) {
+      Customer.hasMany(models.CustomerLocation, { foreignKey: 'customer_id' });
+      Customer.hasMany(models.CustomerContact, { foreignKey: 'customer_id' });
+      Customer.hasMany(models.Prebook, { foreignKey: 'customer_id' });
+      Customer.hasMany(models.PrebookLineItem, { foreignKey: "customer_id" });
+      Customer.hasMany(models.Order, { foreignKey: 'customer_id' });
+    } */
 
     return Customer;
   };
